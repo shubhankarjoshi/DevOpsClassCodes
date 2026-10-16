@@ -772,6 +772,69 @@ header.site-header {
   margin: 0;
 }
 
+.doctor-profile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.doctor-profile-col h4 {
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.bullet-list {
+  display: grid;
+  gap: 10px;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.92rem;
+  color: var(--text-light);
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.doctor-highlight {
+  margin-top: 22px;
+  background: #fff6e8;
+  border: 1px solid #f2d9a3;
+  border-radius: var(--radius);
+  padding: 16px 22px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.doctor-contact {
+  margin-top: 18px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+}
+
+.doctor-contact a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .timeline {
   display: grid;
   gap: 22px;
@@ -1146,7 +1209,8 @@ footer ul li a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .condition-list {
+  .condition-list,
+  .doctor-profile {
     grid-template-columns: 1fr;
   }
 
