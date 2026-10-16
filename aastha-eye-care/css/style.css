@@ -772,6 +772,30 @@ header.site-header {
   margin: 0;
 }
 
+.doctor-block {
+  margin-bottom: 44px;
+}
+
+.doctor-block:last-child {
+  margin-bottom: 0;
+}
+
+.doctor-block-head {
+  margin-bottom: 18px;
+}
+
+.doctor-block-head h3 {
+  margin-bottom: 4px;
+  font-size: 1.3rem;
+}
+
+.doctor-block-head p {
+  margin: 0;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
 .doctor-profile {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
