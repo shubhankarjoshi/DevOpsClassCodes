@@ -41,10 +41,10 @@ Still placeholder — replace before going live:
   up-to-date reviews display automatically.
 - **Google Map embed** — `contact.html` embeds a map via a text search query;
   swap in your exact Place ID/coordinates once available for precision.
-- **Contact form backend** — the appointment form on `contact.html` is
-  front-end only (`js/script.js` just shows a confirmation message). Wire it
-  to a real backend or a form service (e.g. Formspree) to receive submissions
-  by email.
+- **Appointment form** — submits to WhatsApp (opens `wa.me` with the filled
+  details pre-written as a message to the clinic's number, set in
+  `js/script.js` as `WHATSAPP_NUMBER`). Update that number if it ever
+  changes. No backend or email service is needed for this to work.
 - **Optometry & clinical staff** — the third team card on `about.html` is
   still a generic placeholder (no names/photos were supplied for support
   staff).

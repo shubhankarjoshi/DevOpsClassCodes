@@ -25,8 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Contact form (front-end only — wire up a backend/service e.g. Formspree
-  // or your own API endpoint to actually deliver these messages by mail)
+  // Appointment form — sends the request to the clinic's WhatsApp number
+  // instead of a backend. Update WHATSAPP_NUMBER (country code + number,
+  // no + or spaces) if the clinic's WhatsApp number ever changes.
+  var WHATSAPP_NUMBER = "918668267509";
   var form = document.getElementById("contact-form");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -34,6 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
       var status = document.getElementById("form-status");
       var name = form.querySelector("#name").value.trim();
       var phone = form.querySelector("#phone").value.trim();
+      var email = form.querySelector("#email").value.trim();
+      var service = form.querySelector("#service").value;
+      var message = form.querySelector("#message").value.trim();
 
       if (!name || !phone) {
         status.textContent = "Please fill in your name and phone number.";
@@ -41,9 +46,25 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
+      var lines = [
+        "New Appointment Request - Aastha Eye Care",
+        "Name: " + name,
+        "Phone: " + phone,
+      ];
+      if (email) lines.push("Email: " + email);
+      lines.push("Service: " + service);
+      if (message) lines.push("Message: " + message);
+
+      var whatsappUrl =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(lines.join("\n"));
+
       status.textContent =
-        "Thank you, " + name + "! Our team will call you back shortly.";
+        "Opening WhatsApp — please tap send to complete your request.";
       status.classList.add("success");
+      window.open(whatsappUrl, "_blank");
       form.reset();
     });
   }
