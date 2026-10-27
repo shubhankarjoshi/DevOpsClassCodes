@@ -400,6 +400,54 @@ header.site-header {
   font-size: 0.85rem;
 }
 
+/* -------------------- Marquee strip -------------------- */
+.marquee-strip {
+  background: var(--accent-orange);
+  overflow: hidden;
+  padding: 13px 0;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  width: max-content;
+  animation: marquee-scroll 26s linear infinite;
+}
+
+.marquee-group {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
 /* -------------------- Highlights / features -------------------- */
 .features-grid {
   display: grid;
