@@ -1,13 +1,18 @@
 # Aastha Eye Care — Website
 
-A static 5-page website for **Aastha Eye Care**, an eye clinic in Ahilyanagar
-(Ahmednagar), Maharashtra. Pure HTML/CSS/JS — no build step required.
+A static 5-page website for **Aastha Eye Care**, an eye clinic on Savedi Road,
+Ahmednagar, Maharashtra, run by Dr. Ganesh Sarda and Dr. Chaitrali
+Somani-Sarda. Pure HTML/CSS/JS — no build step required.
+
+Content, photos, the logo and the colour palette are sourced from the
+clinic's own brochure (`images/` holds the logo, doctor photos and clinic/
+equipment photos extracted from it).
 
 ## Pages
 
 - `index.html` — Home, with hero, highlights, services/conditions preview, and a **Google review strip**
-- `about.html` — About Us (story, mission/vision, team, timeline)
-- `services.html` — Services offered
+- `about.html` — About Us (story, mission/vision, both doctors' full profiles, clinic photos)
+- `services.html` — Clinical services, surgical procedures, diagnostic facilities, equipment gallery
 - `conditions.html` — Conditions Treated
 - `contact.html` — Contact Us (info, appointment form, map, FAQs)
 
@@ -22,14 +27,14 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
-## Before going live — replace these placeholders
+## What's real vs. still placeholder
 
-- **Phone / email / address** — currently placeholder values in the top bar,
-  footer and contact page of every HTML file (search for `+91 98765 43210`,
-  `info@aasthaeyecare.in`, and the Savedi Road address).
-- **Doctor / staff names & photos** — `about.html` uses generic role titles
-  (e.g. "Lead Ophthalmologist"); replace with real names, qualifications and
-  photos.
+Real (from the brochure): clinic name, logo, address, phone numbers, email,
+hours, both doctors' full qualifications, the services/facilities lists, and
+the clinic/doctor/equipment photos.
+
+Still placeholder — replace before going live:
+
 - **Google Reviews** — the review strip on `index.html` uses sample reviews
   for layout purposes. Replace them with real reviews, or embed a live
   widget tied to your Google Business Profile / Place ID so genuine,
@@ -40,5 +45,6 @@ Then visit `http://localhost:8000`.
   front-end only (`js/script.js` just shows a confirmation message). Wire it
   to a real backend or a form service (e.g. Formspree) to receive submissions
   by email.
-- **Photos** — add real clinic/equipment/team photos under `images/` and
-  reference them in place of the SVG placeholder graphics.
+- **Optometry & clinical staff** — the third team card on `about.html` is
+  still a generic placeholder (no names/photos were supplied for support
+  staff).

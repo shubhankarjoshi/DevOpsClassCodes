@@ -3,18 +3,23 @@
    =========================================================== */
 
 :root {
-  --primary: #0b6e63;
-  --primary-dark: #084f47;
-  --primary-light: #e6f3f1;
-  --accent: #f2a900;
-  --text: #1f2937;
-  --text-light: #5b6b73;
+  /* Brand palette sampled directly from the Aastha Eye Care logo & brochure */
+  --primary: #009ee3;        /* brand cyan-blue (logo ring, section headers) */
+  --primary-dark: #045d86;   /* deepened blue for gradients / footer */
+  --primary-light: #e3f6fd;  /* light blue tint for pills, card accents */
+  --green: #88be39;          /* brand green (logo eye outline) */
+  --green-dark: #6c9c2b;
+  --green-light: #eef6e2;    /* light green tint */
+  --accent: #88be39;         /* buttons / CTAs use brand green */
+  --accent-orange: #ef7c00;  /* brochure's surgery-highlight / award orange */
+  --text: #16232b;
+  --text-light: #55707a;
   --bg: #ffffff;
-  --bg-alt: #f6faf9;
-  --border: #e2e8e6;
+  --bg-alt: #f5fafc;
+  --border: #e1edf1;
   --radius: 12px;
-  --shadow: 0 6px 24px rgba(11, 110, 99, 0.08);
-  --shadow-strong: 0 10px 32px rgba(11, 110, 99, 0.16);
+  --shadow: 0 6px 24px rgba(0, 93, 134, 0.08);
+  --shadow-strong: 0 10px 32px rgba(0, 93, 134, 0.16);
   --max-width: 1180px;
 }
 
@@ -214,18 +219,21 @@ header.site-header {
 .brand-mark {
   width: 46px;
   height: 46px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), #0f9a8a);
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   flex-shrink: 0;
+  padding: 5px;
 }
 
-.brand-mark svg {
-  width: 26px;
-  height: 26px;
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand-text small {
@@ -291,7 +299,7 @@ header.site-header {
 
 /* -------------------- Hero -------------------- */
 .hero {
-  background: linear-gradient(120deg, var(--primary-dark), var(--primary) 55%, #0f9a8a);
+  background: linear-gradient(120deg, var(--primary-dark), var(--primary) 55%, var(--green));
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -355,7 +363,7 @@ header.site-header {
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 16px;
-  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #cdeee7 34%, #0f9a8a 35%, #084f47 100%);
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #d7f0fb 34%, var(--green) 35%, var(--primary-dark) 100%);
   position: relative;
   display: flex;
   align-items: center;
@@ -369,6 +377,20 @@ header.site-header {
   background: #08201c;
   border-radius: 50%;
   box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.hero-visual .hero-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hero-visual .hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-visual-caption {
@@ -529,7 +551,7 @@ header.site-header {
 }
 
 .stars {
-  color: var(--accent);
+  color: var(--accent-orange);
   letter-spacing: 2px;
   font-size: 1.05rem;
 }
@@ -630,7 +652,7 @@ header.site-header {
 
 /* -------------------- Page header (inner pages) -------------------- */
 .page-header {
-  background: linear-gradient(120deg, var(--primary-dark), var(--primary) 60%, #0f9a8a);
+  background: linear-gradient(120deg, var(--primary-dark), var(--primary) 60%, var(--green));
   color: #fff;
   padding: 64px 0 56px;
   text-align: center;
@@ -660,7 +682,7 @@ header.site-header {
 }
 
 .about-photo {
-  background: linear-gradient(135deg, var(--primary-light), #d8f0ea);
+  background: linear-gradient(135deg, var(--primary-light), var(--green-light));
   border-radius: 20px;
   padding: 30px;
   border: 1px solid var(--border);
@@ -669,7 +691,7 @@ header.site-header {
 .about-photo-inner {
   border-radius: 14px;
   aspect-ratio: 4/5;
-  background: radial-gradient(circle at 50% 40%, #ffffff 0%, #bfe6dd 40%, #0f9a8a 68%, #084f47 100%);
+  background: radial-gradient(circle at 50% 40%, #ffffff 0%, #c9e8f8 40%, var(--green) 68%, var(--primary-dark) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -738,7 +760,7 @@ header.site-header {
 
 .team-photo {
   aspect-ratio: 1;
-  background: linear-gradient(135deg, var(--primary-light), #d8f0ea);
+  background: linear-gradient(135deg, var(--primary-light), var(--green-light));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -782,6 +804,21 @@ header.site-header {
 
 .doctor-block-head {
   margin-bottom: 18px;
+}
+
+.doctor-block-head-photo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.doctor-portrait {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-light);
+  flex-shrink: 0;
 }
 
 .doctor-block-head h3 {
@@ -837,8 +874,8 @@ header.site-header {
 
 .doctor-highlight {
   margin-top: 22px;
-  background: #fff6e8;
-  border: 1px solid #f2d9a3;
+  background: #fff3e6;
+  border: 1px solid #f7c98a;
   border-radius: var(--radius);
   padding: 16px 22px;
   font-weight: 600;
@@ -951,8 +988,8 @@ header.site-header {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 18px;
-  background: #fff6e8;
-  border: 1px solid #f2d9a3;
+  background: #fff3e6;
+  border: 1px solid #f7c98a;
   border-radius: var(--radius);
   padding: 24px 28px;
 }
@@ -1179,7 +1216,8 @@ footer.site-footer {
 }
 
 .footer-brand .brand-mark {
-  background: rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: none;
 }
 
 footer h4 {
