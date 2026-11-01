@@ -299,19 +299,30 @@ header.site-header {
 
 /* -------------------- Hero -------------------- */
 .hero {
-  background: linear-gradient(120deg, var(--primary-dark), var(--primary) 55%, var(--green));
+  background-image: linear-gradient(
+      100deg,
+      rgba(3, 25, 38, 0.92) 0%,
+      rgba(4, 50, 75, 0.82) 30%,
+      rgba(4, 68, 100, 0.5) 52%,
+      rgba(4, 68, 100, 0.18) 68%,
+      rgba(4, 68, 100, 0.12) 100%
+    ),
+    url("../images/clinic-exterior-hero.jpg");
+  background-size: cover;
+  background-position: 68% 25%;
+  background-repeat: no-repeat;
   color: #fff;
   position: relative;
   overflow: hidden;
 }
 
 .hero .container {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 48px;
-  align-items: center;
-  padding-top: 76px;
-  padding-bottom: 76px;
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+
+.hero-copy {
+  max-width: 640px;
 }
 
 .hero h1 {
@@ -351,53 +362,20 @@ header.site-header {
   color: #cdece6;
 }
 
-.hero-visual {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  padding: 34px;
-  backdrop-filter: blur(4px);
-}
-
-.hero-visual .eye-graphic {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 16px;
-  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #d7f0fb 34%, var(--green) 35%, var(--primary-dark) 100%);
-  position: relative;
-  display: flex;
+.hero-credit {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-}
-
-.hero-visual .eye-graphic::before {
-  content: "";
-  width: 22%;
-  aspect-ratio: 1;
-  background: #08201c;
-  border-radius: 50%;
-  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15);
-}
-
-.hero-visual .hero-photo {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.hero-visual .hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-visual-caption {
-  margin-top: 18px;
-  text-align: center;
+  gap: 6px;
+  background: rgba(4, 44, 66, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(3px);
   color: #eafaf6;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  padding: 7px 14px;
+  border-radius: 999px;
 }
 
 /* -------------------- Marquee strip -------------------- */
@@ -1305,7 +1283,6 @@ footer ul li a:hover {
 
 /* -------------------- Responsive -------------------- */
 @media (max-width: 960px) {
-  .hero .container,
   .about-grid,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1356,6 +1333,11 @@ footer ul li a:hover {
 
   .hero h1 {
     font-size: 2rem;
+  }
+
+  .hero-credit {
+    position: static;
+    margin-top: 28px;
   }
 
   .features-grid,
