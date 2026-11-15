@@ -248,7 +248,7 @@ header.site-header {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 24px;
 }
 
 .nav-links a {
@@ -1306,7 +1306,7 @@ footer ul li a:hover {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1260px) {
   .nav-links,
   .nav-cta .btn {
     display: none;
@@ -1330,7 +1330,9 @@ footer ul li a:hover {
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow);
   }
+}
 
+@media (max-width: 720px) {
   .hero h1 {
     font-size: 2rem;
   }
