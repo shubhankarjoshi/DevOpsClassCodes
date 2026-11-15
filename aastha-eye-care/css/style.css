@@ -158,7 +158,7 @@ section {
 
 /* -------------------- Top bar -------------------- */
 .topbar {
-  background: var(--primary-dark);
+  background: linear-gradient(120deg, var(--primary-dark), var(--primary) 75%, var(--green-dark) 115%);
   color: #eafaf6;
   font-size: 0.82rem;
 }
@@ -716,12 +716,13 @@ header.site-header {
 
 .about-photo-inner {
   border-radius: 14px;
-  aspect-ratio: 4/5;
+  aspect-ratio: 1100 / 791;
   background: radial-gradient(circle at 50% 40%, #ffffff 0%, #c9e8f8 40%, var(--green) 68%, var(--primary-dark) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
+  overflow: hidden;
 }
 
 .about-photo-inner svg {
